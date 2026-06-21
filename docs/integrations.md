@@ -32,6 +32,20 @@ zstyle :z4h:olets/zsh-abbr postinstall z4h-postinstall:replace-with-github-clone
 z4h load olets/zsh-abbr
 ```
 
+Another option that doesn't use git is to install the required dependency manually:
+
+```shell
+# .zshrc
+
+# Before 'z4h init':
+z4h install olets/zsh-job-queue || return # Dependency for olets/zsh-abbr.
+z4h install olets/zsh-abbr || return
+zstyle ':z4h:olets/zsh-abbr' postinstall 'ln -fFs $Z4H/olets/zsh-job-queue $Z4H_PACKAGE_DIR/'
+
+# After 'z4h init':
+z4h load olets/zsh-abbr
+```
+
 Otherwise, read [Installation&nbsp;>&nbsp;Manual](./installation.md#manual)'s note on GitHub's REST API. You'll indentify the latest release's associated tag, use that to determine the archive URL to download, and then extract the archive into `Z4H_PACKAGE_DIR`. The following pattern is recommended. (Contributions of a clean solution are welcome.)
 
 ```shell
