@@ -51,7 +51,7 @@ z4h-postinstall:reinstall() {
 }
 
 z4h install olets/zsh-abbr || return
-zstyle :z4h:<package> postinstall z4h-postinstall:reinstall
+zstyle :z4h:olets/zsh-abbr postinstall z4h-postinstall:reinstall
 z4h load olets/zsh-abbr
 ```
 
