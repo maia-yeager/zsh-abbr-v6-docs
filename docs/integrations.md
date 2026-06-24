@@ -41,7 +41,7 @@ Another option that doesn't use git is to install the required dependency manual
 z4h install olets/zsh-job-queue || return # Dependency for olets/zsh-abbr.
 z4h install olets/zsh-abbr || return
 zstyle :z4h:olets/zsh-abbr postinstall \
-  'rm -rf $Z4H_PACKAGE_DIR/zsh-job-queue; ln -s ${Z4H_UPDATING-Z4H}/olets/zsh-job-queue $Z4H_PACKAGE_DIR/'
+  'rm -rf $Z4H_PACKAGE_DIR/zsh-job-queue; ln -s ${Z4H_UPDATING-$Z4H}/olets/zsh-job-queue $Z4H_PACKAGE_DIR/'
 
 # After 'z4h init':
 z4h load olets/zsh-abbr
